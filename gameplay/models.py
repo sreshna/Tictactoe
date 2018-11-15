@@ -24,6 +24,7 @@ class GamesQuerySet(models.QuerySet):
             Q(status='F') | Q(status='S')
         )
 
+
 class Game(models.Model):
     first_player = models.ForeignKey(User, related_name='games_first_player')
     second_player = models.ForeignKey(User, related_name='games_second_player')

@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from gameplay.views import welcome
+from ttt.views import welcome
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^player/', include('player.urls')),
-    url(r'^$', welcome)
+    url(r'^$', welcome, name='ttt_welcome')
 ]

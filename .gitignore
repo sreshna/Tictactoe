@@ -1,2 +1,7 @@
 .idea/
 *.pyc
+gameplay/__pycache__/
+gameplay/migrations/__pycache__/
+player/__pycache__/
+player/migrations/__pycache__/
+ttt/__pycache__/
