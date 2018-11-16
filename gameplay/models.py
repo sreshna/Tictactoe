@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 from django.db.models import Q
+from django.urls import reverse
 
 GAME_STATUS_CHOICES = (
     ('F', 'First player to move'),
@@ -32,6 +33,15 @@ class Game(models.Model):
     last_active = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=1, default='F', choices=GAME_STATUS_CHOICES)
     objects = GamesQuerySet.as_manager()
+
+    def board(self):
+        board = [[None for x in range(BOARD_SIZE)] for y in range(BOARD_SIZE)]
+        for move in self.move_set.all():
+            board[move.y][move.x] = move
+        return board
+
+    def get_absolute_url(self):
+        return reverse('gameplay_detail', args=[self.id])
 
     def __str__(self):
         return "{0} vs {1}".format(self.first_player, self.second_player)

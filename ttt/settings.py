@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gameplay',
     'player',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 STATIC_URL = '/static/'
 

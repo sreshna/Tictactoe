@@ -21,5 +21,6 @@ from ttt.views import welcome
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^player/', include('player.urls')),
-    url(r'^$', welcome, name='ttt_welcome')
+    url(r'^$', welcome, name='ttt_welcome'),
+    url(r'^games/', include('gameplay.urls')),
 ]
