@@ -5,7 +5,9 @@ from django.db import models
 # Create your models here.
 
 class Invitation(models.Model):
-    from_user = models.ForeignKey(User, related_name='invitations_sent', on_delete=models.CASCADE)
+    from_user = models.ForeignKey(User,
+                                  related_name='invitations_sent',
+                                  on_delete=models.CASCADE)
     to_user = models.ForeignKey(User,
                                 related_name='invitations_received',
                                 verbose_name="User to invite",

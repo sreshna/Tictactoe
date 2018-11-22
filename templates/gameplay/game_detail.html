@@ -31,9 +31,16 @@
                     {% for move in row %}
                         <td class="ttt-cell">
                             {% if move %}
-
+                                {% if move.by_first_player %}
+                                    X
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% endif %}
                         </td>
+                    {% endfor %}
                 </tr>
+            {% endfor %}
         </table>
-
     </div>
+{% endblock content %}
